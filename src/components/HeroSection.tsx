@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { TypingAnimation } from './TypingAnimation';
 
 export function HeroSection() {
   const scrollToNextSection = () => {
@@ -26,14 +27,18 @@ export function HeroSection() {
             ADEN DJAMA
           </span>
         </motion.h1>
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-base sm:text-xl md:text-2xl text-gray-300 mb-8 font-bold"
         >
-          Étudiant en Cybersécurité
-        </motion.p>
+          <TypingAnimation 
+            text="Étudiant en Cybersécurité" 
+            delay={1200}
+            speed={80}
+          />
+        </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,46 +57,69 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 1.0 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
+          <motion.a
             href="#contact"
-            className="bg-green-500 px-6 py-3 rounded-lg text-white font-semibold shadow hover:bg-green-600 transition w-full sm:w-auto"
+            whileHover={{ scale: 1.05, boxShadow: '0 0 20px rgba(34, 197, 94, 0.5)' }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-to-r from-green-400 to-green-600 text-black px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-green-400/25 w-full sm:w-auto"
           >
             Me Contacter
-          </a>
-          <button
+          </motion.a>
+          <motion.button
             onClick={scrollToNextSection}
-            className="bg-gray-700 px-6 py-3 rounded-lg text-white font-semibold shadow hover:bg-gray-800 transition w-full sm:w-auto flex items-center gap-2 justify-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="border-2 border-green-400 text-green-400 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-green-400 hover:text-black w-full sm:w-auto flex items-center gap-2 justify-center"
           >
             Voir mes Projets <ArrowDown size={18} />
-          </button>
+          </motion.button>
         </motion.div>
-        <div className="flex justify-center gap-5 mt-8">
-          <a
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="flex justify-center gap-5 mt-8"
+        >
+          <motion.a
             href="mailto:adendjama075@gmail.com"
             aria-label="Mail"
-            className="text-green-400 hover:text-green-600 transition"
+            whileHover={{ scale: 1.2, color: '#22c55e' }}
+            className="text-gray-400 hover:text-green-400 transition-colors p-2"
           >
-            <Mail size={24} />
-          </a>
-          <a
-            href="https://github.com/mohammedaden"
+            <Mail size={32} />
+          </motion.a>
+          <motion.a
+            href="https://gitlab.com/users/aden75000/projects"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Github"
-            className="text-green-400 hover:text-green-600 transition"
+            whileHover={{ scale: 1.2, color: '#22c55e' }}
+            className="text-gray-400 hover:text-green-400 transition-colors p-2"
           >
-            <Github size={24} />
-          </a>
-          <a
-            href="https://linkedin.com/in/mohammedaden"
+            <Github size={32} />
+          </motion.a>
+          <motion.a
+            href="https://www.linkedin.com/in/mohammed-aden-djama-alternance-cybersecurite-paris/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Linkedin"
-            className="text-green-400 hover:text-green-600 transition"
+            whileHover={{ scale: 1.2, color: '#22c55e' }}
+            className="text-gray-400 hover:text-green-400 transition-colors p-2"
           >
-            <Linkedin size={24} />
-          </a>
-        </div>
+            <Linkedin size={32} />
+          </motion.a>
+        </motion.div>
+
+        <motion.button
+          onClick={scrollToNextSection}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.5 }}
+          whileHover={{ y: 5 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-green-400 animate-bounce"
+        >
+          <ArrowDown size={32} />
+        </motion.button>
       </div>
     </section>
   );
