@@ -16,7 +16,7 @@ export function HeroSection() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-sm sm:max-w-md md:max-w-4xl mx-auto">
-        <motion.h1
+                <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -34,7 +34,7 @@ export function HeroSection() {
           className="text-base sm:text-xl md:text-2xl text-gray-300 mb-8 font-bold"
         >
           <TypingAnimation 
-            text="Étudiant en Cybersécurité" 
+            text="Étudiant en informatique" 
             delay={1200}
             speed={80}
           />
@@ -49,7 +49,7 @@ export function HeroSection() {
           <br className="hidden sm:block" />
           à la recherche d&apos;une alternance pour approfondir mes compétences
           <br className="hidden sm:block" />
-          en cybersécurité et protection des systèmes d&apos;information.
+          en informatique  et protection des systèmes d&apos;information.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
