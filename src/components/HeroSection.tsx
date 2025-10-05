@@ -16,7 +16,7 @@ export function HeroSection() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
     >
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-sm sm:max-w-md md:max-w-4xl mx-auto">
-                <motion.h1
+                <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -26,7 +26,7 @@ export function HeroSection() {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
             ADEN DJAMA
           </span>
-        </motion.h1>
+        </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
