@@ -9,10 +9,21 @@ import { useMobile } from "./hooks/useMobile";
 export function ProjectsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
-  const { visibleProject, setProjectRef } = useVisibleProject(3);
+  const { visibleProject, setProjectRef } = useVisibleProject(4);
   const isMobile = useMobile();
 
   const projects = [
+    {
+      id: 4,
+      title: "Firewall en Python ( Pare-feu )",
+      description:
+        "développer un mini pare-feu réseau en Python capable de capturer et filtrer le trafic en temps réel selon des règles dynamiques définies dans un fichier YAML, avec journalisation des paquets bloqués en mode simulation pour démontrer la détection des menaces, en exploitant la bibliothèque Scapy sous Linux/WSL.",
+      image:
+        "https://evalian.co.uk/wp-content/uploads/2021/12/Firewall-ruleset.png",
+      technologies: ["Python", "Scrapy", "TCP/IP, UDP"],
+      githubLink: "https://gitlab.com/aden75000/mini-firewall",
+      liveLink: null,
+    },
     {
       id: 1,
       title: "CTF: Desamorcage d'une bombe binaire",
@@ -26,7 +37,7 @@ export function ProjectsSection() {
       id: 2,
       title: "FS Shell",
       description:
-        "Développer en C un interpréteur de commandes Unix complet simulant un système de fichiers virtuel, intégrant parsing avancé, gestion des boucles for et conditions if, traitement des redirections, gestion des signaux, et maintien de l’état du shell via des structures dédiées.",
+        "Développer en C un interpréteur de commandes Unix complet simulant un système de fichiers virtuel, intégrant parsing avancé, gestion des boucles for et conditions if, traitement des redirections, gestion des signaux, et maintien de l'état du shell via des structures dédiées.",
       image:
         "https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2022/02/linux-terminal-directory.jpg",
       technologies: ["C", "Makefile", "UML"],
@@ -69,7 +80,7 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
